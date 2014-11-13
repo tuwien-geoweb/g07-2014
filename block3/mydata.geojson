@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Ort:": "Wien 22., Breitenlee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.497774124145508,
+          48.25102647903768
+        ]
+      }
+    }
+  ]
+}
