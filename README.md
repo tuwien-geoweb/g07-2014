@@ -4,9 +4,6 @@ TU Wien
 280.290 Web-basierte Geoinformation im Planungsprozess  
 Wintersemester 2014  
 
-<<<<<<< HEAD
-Gruppe 07  
-=======
 **Gruppe 07**  
 
 ##Links
