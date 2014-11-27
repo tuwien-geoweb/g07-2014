@@ -57,7 +57,7 @@ form.onsubmit = function(evt) {
   xhr.open("GET", url, true);
   xhr.onload = function() {
     var result = JSON.parse(xhr.responseText);
-    var bbox = reslut.boundingbox;
+    var bbox = reslut[0].boundingbox;
     var extent = /** @type {ol.Coordinate} */ [
     	parseFloat(bbox[2]), parseFloat(bbox[0]),
     	parseFloat([3]),parseFloat([1])
