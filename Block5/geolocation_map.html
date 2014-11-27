@@ -36,7 +36,7 @@ source: new ol.source.MapQuest({layer: 'osm'})
 ],
 view: new ol.View({
 center: ol.proj.transform([16.373, 48.208], 'EPSG:4326', 'EPSG:3857'),
-zoom: 8
+zoom: 10
 })
 });
 
@@ -47,7 +47,7 @@ geolocation.setTracking(true); // here the browser may ask for confirmation
 geolocation.on('change:position', function() {
   geolocation.setTracking(false);
   map.getView().setCenter(geolocation.getPosition());
-};
+});
 
 var form = document.getElementById("search");
 form.onsubmit = function(evt) {
