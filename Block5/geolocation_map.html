@@ -57,10 +57,10 @@ form.onsubmit = function(evt) {
   xhr.open("GET", url, true);
   xhr.onload = function() {
     var result = JSON.parse(xhr.responseText);
-    var bbox = reslut[0].boundingbox;
+    var bbox = result[0].boundingbox;
     var extent = /** @type {ol.Coordinate} */ [
     	parseFloat(bbox[2]), parseFloat(bbox[0]),
-    	parseFloat(bbox[3]),parseFloat(bbox[1])
+    	parseFloat(bbox[3]), parseFloat(bbox[1])
     	];
 	map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
   };
