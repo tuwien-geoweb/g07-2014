@@ -24,6 +24,9 @@ height: 100%;
   <form id="search">
     Search: <input name="query" type="text" size= "40">
   </form>
+  <form id="button">
+ 	<input type="button" name="Location" value="Location" onclick=button>
+  </form>
 </div>
 </div>
 <script type="text/javascript">
@@ -75,7 +78,14 @@ form.onsubmit = function(evt) {
   xhr.send();
  console.log(result);
  }
- 
+ function button() {
+geolocation.setTracking(true); // here the browser may ask for confirmation
+geolocation.on('change:position', function() {
+geolocation.setTracking(false);
+map.getView().setCenter(geolocation.getPosition());
+marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+});
+ }
 </script>
 </body>
 </html>
