@@ -54,7 +54,7 @@ geolocation.setTracking(true); // here the browser may ask for confirmation
 geolocation.on('change:position', function() {
   geolocation.setTracking(false);
   map.getView().setCenter(geolocation.getPosition());
-  marker.setGeometry(new ol.geom.Point(map.getCenter()));
+  marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 });
 
 var form = document.getElementById("search");
