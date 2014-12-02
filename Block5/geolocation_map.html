@@ -74,6 +74,8 @@ form.onsubmit = function(evt) {
     	parseFloat(bbox[3]), parseFloat(bbox[1])
     	];
 	map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
+        marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+
   };
   xhr.send();
  console.log(result);
