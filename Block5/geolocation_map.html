@@ -22,7 +22,10 @@ height: 100%;
 </div>
 <div class="col-md-4">
   <form id="search">
-    Search: <input name="query" type="text" size= "40">
+    Suche: <input name="query" type="text" size= "40">
+  </form>
+  <form id="oecheckbox">
+  <input type="checkbox" name="oewert" value="oewert" id="oe">Einschränkung auf Österreich
   </form>
   <form id="button">
  	<input type="button" name="Location" value="Location" onclick="button()">
@@ -65,7 +68,11 @@ geolocation.on('change:position', function() {
 var form = document.getElementById("search");
 form.onsubmit = function(evt) {
   evt.preventDefault();
-  var url = 'http://nominatim.openstreetmap.org/search?format=json&q=' + form.query.value;
+  if (oecheckbox.oewert.checked == true) {
+var oewert = '&countrycodes=at';
+  } 
+  else {var oewert = ''}
+  var url = 'http://nominatim.openstreetmap.org/search?format=json' + oewert + '&q=' + form.query.value;
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onload = function() {
