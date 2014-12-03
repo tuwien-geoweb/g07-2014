@@ -28,7 +28,7 @@ height: 100%;
   <input type="checkbox" name="oewert" value="oewert" id="oe">Einschränkung auf Österreich
   </form>
   <form id="button">
- 	<input type="button" name="Location" value="Location" onclick="button()">
+ 	<input type="button" name="Location" value="Location" onclick="JavaScript:button();">
   </form>
 </div>
 </div>
@@ -56,11 +56,11 @@ maxZoom: 19
 function button() {
   var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
   geolocation.setTracking(true); // here the browser may ask for confirmation
-  geolocation.on('change:position', function() {
+  geolocation.on('change', function() {
     geolocation.setTracking(false);
     map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 19 });
     marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
-    console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " m");
+    console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
   });
 }
 button();
