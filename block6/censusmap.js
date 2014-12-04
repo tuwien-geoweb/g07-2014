@@ -5,7 +5,7 @@ var osmLayer = new ol.layer.Tile({source: new ol.source.OSM()});
 var wmsLayer = new ol.layer.Image({
   source: new ol.source.ImageWMS({
     url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-    params: {'LAYERS': 'g07_2014:normalized'}
+    params: {'LAYERS': 'g07_2014:normalized,g07_2014:comments'}
   }),
   opacity: 0.6
 });
@@ -60,6 +60,26 @@ olMap.on('singleclick', function(evt) {
   $('.popover-title').click(function() {
     $('#popup').popover('hide');
   });
+  
+  $('.popover form')[0].onsubmit = function(e) {
+  var feature = new ol.Feature();
+  feature.setGeometryName('geom');
+  feature.setGeometry(new ol.geom.Point(evt.coordinate));
+  feature.set('comment', this.comment.value);
+  var xml = new ol.format.WFS().writeTransaction([feature], null, null, {
+    featureType: 'comments', featureNS: 'http://geoweb/2014/g07',
+    gmlOptions: {srsName: 'EPSG:3857'}
+  });
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
+  xhr.onload = function() {
+    wmsLayer.getSource().updateParams({});
+    alert('Thanks for your comment.');
+  };
+  xhr.send(new XMLSerializer().serializeToString(xml));
+  e.preventDefault();
+};
+  
 });
 
 // Submit query to Nominatim and zoom map to the result's extent
