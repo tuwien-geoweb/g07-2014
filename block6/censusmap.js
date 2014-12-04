@@ -32,6 +32,7 @@ $.get("data/datadict.txt", function(response) {
 });
 
 // Add behaviour to dropdown
+// Changes the WMS parameters in Link
 $('#topics').change(function() {
   wmsLayer.getSource().updateParams({
     'viewparams': 'column:' + $('#topics>option:selected').val()
