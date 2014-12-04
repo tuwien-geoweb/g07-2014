@@ -42,6 +42,11 @@
     <div id="map">
       <!-- GetLegendGraphic, customized with some LEGEND_OPTIONS -->
       <img class="legend img-rounded" src="http://student.ifip.tuwien.ac.at/geoserver/g07_2014/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=26&HEIGHT=18&STRICT=false&style=g07_stddev&LEGEND_OPTIONS=fontName:sans-serif;fontSize:11;fontAntiAliasing:true;fontStyle:bold;fontColor:0xFFFFFF;bgColor:0x000000">
+      <div id="popup" data-html="true" data-placement="auto" data-title="&times;">
+        <div id="popup-content" style="display:none">
+          <iframe seamless></iframe>
+        </div>
+      </div>
     </div>
     <script type="text/javascript" src="censusmap.js"></script>
   </body>
