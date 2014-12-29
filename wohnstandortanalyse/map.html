@@ -37,6 +37,41 @@
     <!--Bootstrap-container for control elements-->
     <h2>Wohnstandortanalyse</h2>
     <p>Dies ist die Wohnstandortanalyse der Gruppe 07.</p>
+    
+    <!--Geolocation function via Nominatim-->
+    <form id="search">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="search" name="query" class="form-control" placeholder="Suche">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </span>
+	</div>
+      </div>
+    </form>
+    
+    <!--Checkboxes to choose your overlay-->
+    <form id="layerschecked">
+      <div class="checkbox">
+        <input type="checkbox" id="p_bezirksgrenzen">Bezirksgrenzen
+      </div>
+    </form>
+	
+    <!--Dropdown Menue to choose between Basemap.at and OSM-->	
+    <!--<form id="basemap">
+      <div class="form-group">
+	<label for="form-control">Basiskarte</label>
+	<select class="form-control">
+	  <option value="geolandbasemap">basemap.at</option>
+	  <option value="osm">OpenStreetMaps (Open Layers)</option>
+	</select>
+      </div>
+    </form>-->
+    
+    <!--  <form id="button">
+       <input type="button" name="Location" value="Location" onclick="JavaScript:button();">
+    </form>	-->
+    
   </div>
   
   </div>
