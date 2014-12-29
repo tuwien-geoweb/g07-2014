@@ -19,7 +19,7 @@
 	//WMTS source:
 	var source = new ol.source.WMTS({
 	  projection: 'EPSG:3857',
-	  layer: hiDPI ? 'bmapgrau' : 'bmapgrau',
+	  layer: hiDPI ? 'bmaphidpi' : 'geolandbasemap',
 	  tilePixelRatio: hiDPI ? 2 : 1,
 	  style: 'normal',
 	  matrixSet: 'google3857',
