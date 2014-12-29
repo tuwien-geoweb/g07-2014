@@ -66,13 +66,11 @@
 		    //Extent der Basemap.at
 		    extent: [977844.377599999, 5837774.6617, 1915609.8654, 6295560.8122],
 			//Source aus Abschnitt "Basemap.at WMTS Control"
-			source: source
+		    source: source
 		  }),
-		  /*
           new ol.layer.Tile({
             source: new ol.source.MapQuest({layer: 'osm'})
          }),
-		 */
           new ol.layer.Tile({
             source: new ol.source.TileWMS({
               url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
