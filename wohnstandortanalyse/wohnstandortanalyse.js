@@ -19,7 +19,7 @@
 	//WMTS source:
 	var source = new ol.source.WMTS({
 	  projection: 'EPSG:3857',
-	  layer: hiDPI ? 'bmaphidpi' : 'geolandbasemap',
+	  layer: hiDPI ? 'bmapgrau' : 'geolandbasemap',
 	  tilePixelRatio: hiDPI ? 2 : 1,
 	  style: 'normal',
 	  matrixSet: 'google3857',
@@ -68,9 +68,11 @@
 			//Source aus Abschnitt "Basemap.at WMTS Control"
 		    source: source
 		  }),
+		  /*
           new ol.layer.Tile({
             source: new ol.source.MapQuest({layer: 'osm'})
          }),
+         */
           new ol.layer.Tile({
             source: new ol.source.TileWMS({
               url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
