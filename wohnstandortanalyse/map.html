@@ -7,11 +7,11 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   
+  <!-- JQUERY -->
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+      
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  
-  <!-- JQUERY -->
-  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   
   <!-- Inclusion of Openlayers 3 Framework -->
   <script src="http://openlayers.org/en/v3.1.1/build/ol.js" type="text/javascript"></script>
@@ -50,13 +50,18 @@
       </div>
     </form>
     
-    <!--Checkboxes to choose your overlay-->
+    <!--Checkboxes to choose your overlay / for Bezirksgrenzen replaced with buttons
     <form id="layerschecked">
       <div class="checkbox">
         <input type="checkbox" id="p_bezirksgrenzen">Bezirksgrenzen
       </div>
+    </form>-->
+      
+    <!--Checkboxes as buttons / should work-->
+	<form id="layerschecked">
+      <button type="button" class="btn btn-default btn-block" data-toggle="button" id="p_bezirksgrenzen">Bezirksgrenzen</button>
     </form>
-	
+      
     <!--Dropdown Menue to choose between Basemap.at and OSM-->	
     <!--<form id="basemap">
       <div class="form-group">
