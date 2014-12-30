@@ -115,18 +115,32 @@
 	  xhr.send();
 	 console.log(result);
 	}
-
-	document.getElementById('p_bezirksgrenzen').onclick = function(e){
-	  if(this.checked==1){
-		map.addLayer(lay_p_bezirksgrenzen);
-	  }else{
-		map.removeLayer(lay_p_bezirksgrenzen);
-	  }
-	};
-			
+		
+    // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
 				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_bezirksgrenzen', TRANSPARENT: true, FORMAT: 'image/png'}
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_bezirksgrenzen', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
+
+    // layer Bezirksgrenzen is not added yet
+   var lay_p_bezirksgrenzenvisible = 0;
+
+    // add layer Bezirksgrenzen triggered by Button
+	document.getElementById('p_bezirksgrenzen').onclick = function(e){
+	  if(lay_p_bezirksgrenzenvisible=='0'){
+		map.addLayer(lay_p_bezirksgrenzen), lay_p_bezirksgrenzenvisible = 1;
+	  }else{
+		map.removeLayer(lay_p_bezirksgrenzen), lay_p_bezirksgrenzenvisible = 0;
+	  }
+	};
+
+    // Layer Bezirksgrenzen triggered by checkboxes (var lay_p_bezirksgrenzenvisible überflüssig)
+	//document.getElementById('p_bezirksgrenzen').onclick = function(e){
+	//  if(this.checked==1){
+	//	map.addLayer(lay_p_bezirksgrenzen);
+	//  }else{
+	//	map.removeLayer(lay_p_bezirksgrenzen);
+//	  }
+//	};
