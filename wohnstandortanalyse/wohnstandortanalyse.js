@@ -124,7 +124,6 @@
 				})
 			  });
 
-    // layer Bezirksgrenzen is not added yet
    var lay_p_bezirksgrenzenvisible = 0;
 
     // add layer Bezirksgrenzen triggered by Button
@@ -136,11 +135,191 @@
 	  }
 	};
 
-    // Layer Bezirksgrenzen triggered by checkboxes (var lay_p_bezirksgrenzenvisible überflüssig)
-	//document.getElementById('p_bezirksgrenzen').onclick = function(e){
-	//  if(this.checked==1){
-	//	map.addLayer(lay_p_bezirksgrenzen);
-	//  }else{
-	//	map.removeLayer(lay_p_bezirksgrenzen);
-//	  }
-//	};
+    // layers POI
+	var lay_p_carsharing = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_carsharing_standorte', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_fahrrad = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_fahrradabstellanlagen', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_haltestellen = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_haltestellen', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_parkanlagen = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_parkanlagen', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_schulen = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_schulen', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_spielplaetze = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_spielplaetze', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_sportstaetten = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_sportstaetten', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_universitaeten = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_universitaeten', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+// layer vectors dont work...
+
+	var lay_p_tempo30 = new ol.layer.Vector({
+				source: new ol.source.Vector({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wfs',
+				  params: {VERSION: '1.0.0', typeName: 'g07_2014:g07_2014_p_tempo30zonen'},
+				}),
+    style: new ol.style.Style({
+  'pointRadius': 10
+            })
+			  });
+
+	var lay_p_zone = new ol.layer.Vector({
+				source: new ol.source.Vector({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wfs',
+				  params: {VERSION: '1.0.0', typeName: 'g07_2014:g07_2014_p_fussgaengerzonen,g07_2014:g07_2014_p_wohnstrassen'},
+				})
+			  });
+
+var lay_p_fahrrad_vec = new ol.layer.Vector({
+              source: new ol.source.GeoJSON({
+                  url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_carsharing_standorte&maxFeatures=50&outputFormat=json'
+                }),
+    style: new ol.style.Style({
+  'pointRadius': 10
+            })
+            });
+
+/*// code snippet from last years groups, dont work either, even breaks WMS layers
+var lay_p_zone = new ol.layer.Vector({
+  source: new ol.source.Vector({
+    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2013/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2013:HALTESTELLEWLOGD&outputFormat=json',
+    parser: new ol.parser.GeoJSON()
+  }),
+            style: new ol.style.Style({
+                     symbolizers: [
+               new ol.style.Icon({
+			url: 'http://student.ifip.tuwien.ac.at/geoweb/2013/g03/images/Haltestellen.png',
+		       })
+                  ]
+            })
+  });*/
+
+    // Layers triggered by checkboxes
+	document.getElementById('p_carsharing').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_carsharing);
+	  }else{
+		map.removeLayer(lay_p_carsharing);
+    	  }
+    	};
+
+	document.getElementById('p_fahrrad').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_fahrrad);
+	  }else{
+		map.removeLayer(lay_p_fahrrad);
+    	  }
+    	};
+
+	document.getElementById('p_haltestellen').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_haltestellen);
+	  }else{
+		map.removeLayer(lay_p_haltestellen);
+    	  }
+    	};
+
+	document.getElementById('p_parkanlagen').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_parkanlagen);
+	  }else{
+		map.removeLayer(lay_p_parkanlagen);
+    	  }
+    	};
+
+	document.getElementById('p_schulen').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_schulen);
+	  }else{
+		map.removeLayer(lay_p_schulen);
+    	  }
+    	};
+
+	document.getElementById('p_spielplaetze').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_spielplaetze);
+	  }else{
+		map.removeLayer(lay_p_spielplaetze);
+    	  }
+    	};
+
+	document.getElementById('p_sportstaetten').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_sportstaetten);
+	  }else{
+		map.removeLayer(lay_p_sportstaetten);
+    	  }
+    	};
+
+	document.getElementById('p_universitaeten').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_universitaeten);
+	  }else{
+		map.removeLayer(lay_p_universitaeten);
+    	  }
+    	};
+
+	document.getElementById('p_tempo30').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_tempo30);
+	  }else{
+		map.removeLayer(lay_p_tempo30);
+    	  }
+    	};
+
+	document.getElementById('p_zone').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_zone);
+	  }else{
+		map.removeLayer(lay_p_zone);
+    	  }
+    	};
+
+	document.getElementById('p_fahrrad_vec').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_fahrrad_vec);
+	  }else{
+		map.removeLayer(lay_p_fahrrad_vec);
+    	  }
+    	};

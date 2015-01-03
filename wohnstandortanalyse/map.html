@@ -23,6 +23,7 @@
 	}
 	</style>
 	
+  <meta charset="utf-8">
   </head>
   
   <body>
@@ -50,17 +51,10 @@
       </div>
     </form>
     
-    <!--Checkboxes to choose your overlay / for Bezirksgrenzen replaced with buttons
-    <form id="layerschecked">
-      <div class="checkbox">
-        <input type="checkbox" id="p_bezirksgrenzen">Bezirksgrenzen
-      </div>
-    </form>-->
-      
+  
     <!--Checkboxes as buttons / should work-->
-	<form id="layerschecked">
-      <button type="button" class="btn btn-default btn-block" data-toggle="button" id="p_bezirksgrenzen">Bezirksgrenzen</button>
-    </form>
+    <button type="button" class="btn btn-default btn-block" data-toggle="button" id="p_bezirksgrenzen">Bezirksgrenzen</button>
+<p><br></p>
       
     <!--Dropdown Menue to choose between Basemap.at and OSM-->	
     <!--<form id="basemap">
@@ -76,7 +70,26 @@
     <!--  <form id="button">
        <input type="button" name="Location" value="Location" onclick="JavaScript:button();">
     </form>	-->
-    
+      
+    <!-- Checkboxes to choose your overlay / for Bezirksgrenzen replaced with buttons -->
+    <form>
+     <div class="form-group">
+        <h6>Points of interest</h6>
+        <div class="checkbox"><label><input type="checkbox" id="p_carsharing">Carsharing-Standorte</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_fahrrad">Fahrradabstellplätze</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_haltestellen">Haltestellen öffentlicher Verkehrsmittel</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_parkanlagen">Parkanlagen/Grünanlagen (Zugangspunkte)</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_schulen">Schulen</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_spielplaetze">Spielplätze</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_sportstaetten">Sportanlagen</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_universitaeten">Universitäten</label></div>
+        <h6>Vektor-Layer-Test</h6>
+        <div class="checkbox"><label><input type="checkbox" id="p_tempo30">Tempo 30-Zone</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_zone">Fußgängerzone, Begegnungszone, Wohnstraße</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_fahrrad_vec">Fußgängerzone, Begegnungszone, Wohnstraße</label></div>
+      </div>
+    </div>
+    </form>
   </div>
   
   </div>
