@@ -201,7 +201,7 @@
 				}),
                                 style: new ol.style.Style({
 				  fill: new ol.style.Fill({
-				    color: [27, 255, 54, 0.1]
+				    color: [27, 255, 54, 0.4]
 				  })
                                 })
 			        });
