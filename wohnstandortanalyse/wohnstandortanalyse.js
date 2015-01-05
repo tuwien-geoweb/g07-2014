@@ -195,14 +195,14 @@
 // layer vectors dont work...
 
 	var lay_p_tempo30 = new ol.layer.Vector({
-				source: new ol.source.Vector({
-				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wfs',
-				  params: {VERSION: '1.0.0', typeName: 'g07_2014:g07_2014_p_tempo30zonen'},
+				source: new ol.source.GeoJSON({
+				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_tempo30zonen&outputFormat=json'
+				projection: 'EPSG:3857'
 				}),
-    style: new ol.style.Style({
-  'pointRadius': 10
-            })
-			  });
+                                  style: new ol.style.Style({
+                                  'pointRadius': 10
+                                  })
+			        });
 
 	var lay_p_zone = new ol.layer.Vector({
 				source: new ol.source.Vector({
