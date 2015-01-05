@@ -191,6 +191,13 @@
 				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_universitaeten', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
+			  
+	var lay_p_realnutzung = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_realnutzungskartierung2012', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
 
 // layer vectors dont work...
 
@@ -308,6 +315,14 @@ var lay_p_zone = new ol.layer.Vector({
 		map.addLayer(lay_p_universitaeten);
 	  }else{
 		map.removeLayer(lay_p_universitaeten);
+    	  }
+    	};
+    	
+    	document.getElementById('p_realnutzung').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_realnutzung);
+	  }else{
+		map.removeLayer(lay_p_realnutzung);
     	  }
     	};
 
