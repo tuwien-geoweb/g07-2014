@@ -200,27 +200,36 @@
 				projection: 'EPSG:3857'
 				}),
                                 style: new ol.style.Style({
-				  fill: new ol.style.Fill({
-				    color: [251, 241, 83, 0.55]
-				  })
-                                })
+				        fill: new ol.style.Fill({
+				                color: [251, 241, 83, 0.55]
+				        })
+                                     })
 			        });
 
 	var lay_p_zone = new ol.layer.Vector({
-				source: new ol.source.Vector({
-				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wfs',
-				  params: {VERSION: '1.0.0', typeName: 'g07_2014:g07_2014_p_fussgaengerzonen,g07_2014:g07_2014_p_wohnstrassen'},
+				source: new ol.source.GeoJSON({
+				url: 'student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_fussgaengerzonen&outputFormat=json',
+				projection: 'EPSG:3857'
+				}),
+				style: new ol.style.Style({
+					fill: new ol.style.Fill({
+						color: [251, 187, 16, 0.55]
+					})
 				})
 			  });
 
-var lay_p_fahrrad_vec = new ol.layer.Vector({
-              source: new ol.source.GeoJSON({
-                  url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_carsharing_standorte&maxFeatures=50&outputFormat=json'
-                }),
-    style: new ol.style.Style({
-  'pointRadius': 10
-            })
-            });
+      	var lay_p_voronoi = new ol.layer.Vector({
+        			source: new ol.source.GeoJSON({
+                  		url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_HighRankStopsVoronoi_bez&outputFormat=json',
+                		projection: 'EPSG:3857'
+        			}),
+				style: new ol.style.Style({
+				      stroke: new ol.style.Stroke({
+				        color: 'black',
+				        width: 1
+				      })
+				    })
+				});
 
 /*// code snippet from last years groups, dont work either, even breaks WMS layers
 var lay_p_zone = new ol.layer.Vector({
@@ -318,10 +327,10 @@ var lay_p_zone = new ol.layer.Vector({
     	  }
     	};
 
-	document.getElementById('p_fahrrad_vec').onclick = function(e){
+	document.getElementById('lay_p_voronoi').onclick = function(e){
 	  if(this.checked==1){
-		map.addLayer(lay_p_fahrrad_vec);
+		map.addLayer(lay_p_voronoi);
 	  }else{
-		map.removeLayer(lay_p_fahrrad_vec);
+		map.removeLayer(lay_p_voronoi);
     	  }
     	};
