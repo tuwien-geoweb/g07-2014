@@ -201,11 +201,7 @@
 				}),
                                 style: new ol.style.Style({
 				  fill: new ol.style.Fill({
-				    color: [255, 255, 255, 0.1]
-				  }),
-				  stroke: new ol.style.Stroke({
-				    color: 'olive',
-				    width: 1
+				    color: [27, 255, 54, 0.1]
 				  })
                                 })
 			        });
