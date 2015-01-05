@@ -208,7 +208,7 @@
 
 	var lay_p_zone = new ol.layer.Vector({
 				source: new ol.source.GeoJSON({
-				url: 'student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_fussgaengerzonen&outputFormat=json',
+				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_fussgaengerzonen&outputFormat=json',
 				projection: 'EPSG:3857'
 				}),
 				style: new ol.style.Style({
