@@ -201,7 +201,13 @@
 				projection: 'EPSG:3857'
 				}),
                                 style: new ol.style.Style({
-                                'pointRadius': 10
+				  fill: new ol.style.Fill({
+				    color: 'blue'
+				  }),
+				  stroke: new ol.style.Stroke({
+				    color: 'olive',
+				    width: 1
+				  }
                                 })
 			        });
 
