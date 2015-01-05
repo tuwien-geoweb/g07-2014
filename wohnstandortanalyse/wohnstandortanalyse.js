@@ -71,13 +71,13 @@
           new ol.layer.Tile({
             source: new ol.source.MapQuest({layer: 'osm'})
          }),*/
-          new ol.layer.Tile({
+         /* new ol.layer.Tile({
             source: new ol.source.TileWMS({
               url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
               params: {VERSION: '1.1.1', LAYERS: 'g07_2014:feedback', TRANSPARENT: true, FORMAT: 'image/png'}
             })
           })
-        ],
+        */],
         view: new ol.View({
           center: ol.proj.transform([16.373, 48.208], 'EPSG:4326', 'EPSG:3857'),
           zoom: 11
@@ -197,11 +197,11 @@
 	var lay_p_tempo30 = new ol.layer.Vector({
 				source: new ol.source.GeoJSON({
 				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_tempo30zonen&outputFormat=json',
-				projection: 'EPSG:4326'
+				projection: 'EPSG:3857'
 				}),
-                                  style: new ol.style.Style({
-                                  'pointRadius': 10
-                                  })
+                                style: new ol.style.Style({
+                                'pointRadius': 10
+                                })
 			        });
 
 	var lay_p_zone = new ol.layer.Vector({
