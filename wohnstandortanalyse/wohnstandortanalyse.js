@@ -202,7 +202,8 @@
 				}),
                                 style: new ol.style.Style({
 				  fill: new ol.style.Fill({
-				    color: 'blue'
+				    color: 'green'
+				    opacity: 0.4
 				  }),
 				  stroke: new ol.style.Stroke({
 				    color: 'olive',
