@@ -327,7 +327,7 @@ var lay_p_zone = new ol.layer.Vector({
     	  }
     	};
 
-	document.getElementById('lay_p_voronoi').onclick = function(e){
+	document.getElementById('p_voronoi').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_voronoi);
 	  }else{
