@@ -201,7 +201,7 @@
 				}),
                                 style: new ol.style.Style({
 				  fill: new ol.style.Fill({
-				    ccolor: [255, 255, 255, 0.5]
+				    color: [255, 255, 255, 0.1]
 				  }),
 				  stroke: new ol.style.Stroke({
 				    color: 'olive',
