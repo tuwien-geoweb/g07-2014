@@ -207,7 +207,7 @@
 				  stroke: new ol.style.Stroke({
 				    color: 'olive',
 				    width: 1
-				  }
+				  })
                                 })
 			        });
 
