@@ -196,7 +196,7 @@
 
 	var lay_p_tempo30 = new ol.layer.Vector({
 				source: new ol.source.GeoJSON({
-				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_tempo30zonen&outputFormat=json'
+				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_tempo30zonen&outputFormat=json',
 				projection: 'EPSG:3857'
 				}),
                                   style: new ol.style.Style({
