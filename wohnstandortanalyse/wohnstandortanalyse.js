@@ -116,7 +116,6 @@
     	var featureType, featureNS;
 	var form = document.forms[0];
 	
-	function submitForm() {
 	  var feature = new ol.Feature();
 	  //var position = geolocation.getPosition(); Hier wird die Position über Geolocation abgefragt. Position wird im weiteren verlauf durch result ersetzt.
 	  if (result) {
@@ -136,7 +135,6 @@
 	    alert(request.responseText);
 	  }
 	  request.send(new XMLSerializer().serializeToString(transaction));
-	}
 	//Send Coordinates of Nominatim Query to database
 	  };
 	  xhr.send();
