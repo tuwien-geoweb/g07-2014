@@ -111,6 +111,8 @@
 			];
 		map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
 		marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+	
+	console.log(result);
 		
         //Send Coordinates of Nominatim Query to database
     	var featureType, featureNS;
