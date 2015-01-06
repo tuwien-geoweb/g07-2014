@@ -112,17 +112,18 @@
 		map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
 		marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 	
-	console.log(result);
+	
 		
         //Send Coordinates of Nominatim Query to database
     	var featureType, featureNS;
 	var form = document.forms[0];
-	
+	var LocationWohnstandort = ol.proj.transform(map.getView().getCenter(), 'EPSG:3857', 'EPSG:4326')
+	console.log(result);
 	  var feature = new ol.Feature();
 	  //var position = geolocation.getPosition(); Hier wird die Position über Geolocation abgefragt. Position wird im weiteren verlauf durch result ersetzt.
-	  if (result) {
+	  if (LocationWohnstandort) {
 	    feature.setGeometryName('geom');
-	    feature.setGeometry(new ol.geom.Point(result));
+	    feature.setGeometry(new ol.geom.Point(LocationWohnstandort));
 	  }
 	  feature.set('Adresse', form.query.value);
 	  
