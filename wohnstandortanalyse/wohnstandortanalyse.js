@@ -99,7 +99,8 @@
 	var form = document.getElementById("search");
 	form.onsubmit = function(evt) {
 	  evt.preventDefault();
-	  var url = 'http://nominatim.openstreetmap.org/search?format=json&countrycodes=at&q=' + form.query.value;  var xhr = new XMLHttpRequest();
+	  var url = 'http://nominatim.openstreetmap.org/search?format=json&countrycodes=at&q=' + form.query.value;
+	  var xhr = new XMLHttpRequest();
 	  xhr.open("GET", url, true);
 	  xhr.onload = function() {
 	  var result = JSON.parse(xhr.responseText);
@@ -110,11 +111,41 @@
 			];
 		map.getView().fitExtent(ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857'), map.getSize());
 		marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
-
+		
+        //Send Coordinates of Nominatim Query to database
+    	var featureType, featureNS;
+	var form = document.forms[0];
+	
+	function submitForm() {
+	  var feature = new ol.Feature();
+	  //var position = geolocation.getPosition(); Hier wird die Position über Geolocation abgefragt. Position wird im weiteren verlauf durch result ersetzt.
+	  if (result) {
+	    feature.setGeometryName('geom');
+	    feature.setGeometry(new ol.geom.Point(result));
+	  }
+	  feature.set('Adresse', form.query.value);
+	  
+	  var transaction = new ol.format.WFS().writeTransaction([feature], null, null, {
+	    featureType: featureType,
+	    featureNS: featureNS,
+	    gmlOptions: {srsName: 'EPSG:4326'}
+	  });
+	  var request = new XMLHttpRequest();
+	  request.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
+	  request.onload = function() {
+	    alert(request.responseText);
+	  }
+	  request.send(new XMLSerializer().serializeToString(transaction));
+	}
+	//Send Coordinates of Nominatim Query to database
 	  };
 	  xhr.send();
 	 console.log(result);
 	}
+	
+
+	
+
 		
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
