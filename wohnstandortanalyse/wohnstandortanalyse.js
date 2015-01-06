@@ -115,7 +115,8 @@
 	
 		
         //Send Coordinates of Nominatim Query to database
-    	var featureType, featureNS;
+    	var featureType = 'wohnstandorte'
+    	var featureNS = 'http://geoweb/2014/g07';
 	var form = document.forms[0];
 	var LocationWohnstandort = ol.proj.transform(map.getView().getCenter(), 'EPSG:3857', 'EPSG:4326')
 	console.log(result);
