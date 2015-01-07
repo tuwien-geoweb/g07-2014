@@ -152,6 +152,7 @@
         		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte', TRANSPARENT: true, FORMAT: 'image/png'},
         		})
         });
+        map.addLayer(lay_p_wohnstandorte);
 		
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
@@ -160,7 +161,7 @@
 				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_bezirksgrenzen', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
-			  map.addLayer(lay_p_bezirksgrenzen);
+			  
 
    var lay_p_bezirksgrenzenvisible = 0;
 
