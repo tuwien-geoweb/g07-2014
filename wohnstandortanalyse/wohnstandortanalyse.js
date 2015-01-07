@@ -121,7 +121,6 @@
 	var LocationWohnstandort = ol.proj.transform(map.getView().getCenter(), 'EPSG:3857', 'EPSG:4326')
 	console.log(result);
 	  var feature = new ol.Feature();
-	  //var position = geolocation.getPosition(); Hier wird die Position über Geolocation abgefragt. Position wird im weiteren verlauf durch result ersetzt.
 	  if (LocationWohnstandort) {
 	    feature.setGeometryName('geom');
 	    feature.setGeometry(new ol.geom.Point(LocationWohnstandort));
@@ -146,8 +145,13 @@
 	}
 	
 
-	
-
+    //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
+        var lay_p_wohnstandorte = new ol.layer.Tile({
+        	source: new ol.source.TileWMS({
+        		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+        		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte', TRANSPARENT: true, FORMAT: 'image/png'},
+        		})
+        });
 		
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
@@ -156,6 +160,7 @@
 				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_bezirksgrenzen', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
+			  map.addLayer(lay_p_bezirksgrenzen);
 
    var lay_p_bezirksgrenzenvisible = 0;
 
