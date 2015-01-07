@@ -130,7 +130,7 @@
 	  var transaction = new ol.format.WFS().writeTransaction([feature], null, null, {
 	    featureType: featureType,
 	    featureNS: featureNS,
-	    gmlOptions: {srsName: 'EPSG:4326'}
+	    //gmlOptions: {srsName: 'EPSG:4326'}
 	  });
 	  var request = new XMLHttpRequest();
 	  request.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
