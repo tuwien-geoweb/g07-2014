@@ -242,7 +242,7 @@
 
 	var lay_p_tempo30 = new ol.layer.Vector({
 				source: new ol.source.GeoJSON({
-				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_tempo30zonen&outputFormat=json',
+				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_tempo30zonen,g07_2014_p_wohnstrassen&outputFormat=json',
 				projection: 'EPSG:3857'
 				}),
                                 style: new ol.style.Style({
@@ -276,6 +276,19 @@
 				      })
 				    })
 				});
+
+	var lay_p_parken = new ol.layer.Vector({
+				source: new ol.source.GeoJSON({
+				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_parkpickerlgeltungsbereich&outputFormat=json',
+				projection: 'EPSG:3857'
+				}),
+                                style: new ol.style.Style({
+				        fill: new ol.style.Fill({
+				                color: [13, 92, 247, 1]
+				        })
+                                     }),
+        opacity: 0.55
+			        });
 
 /*// code snippet from last years groups, dont work either, even breaks WMS layers
 var lay_p_zone = new ol.layer.Vector({
@@ -386,5 +399,13 @@ var lay_p_zone = new ol.layer.Vector({
 		map.addLayer(lay_p_voronoi);
 	  }else{
 		map.removeLayer(lay_p_voronoi);
+    	  }
+    	};
+
+	document.getElementById('p_parken').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_parken);
+	  }else{
+		map.removeLayer(lay_p_parken);
     	  }
     	};

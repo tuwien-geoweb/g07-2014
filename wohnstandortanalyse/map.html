@@ -85,10 +85,11 @@
         <div class="checkbox"><label><input type="checkbox" id="p_spielplaetze"><img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g07/homepage/img/Piktogramme/Spielplatz.png"></img> Spielplätze</label></div>
         <div class="checkbox"><label><input type="checkbox" id="p_sportstaetten"><img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g07/homepage/img/Piktogramme/Sportanlage.png"></img> Sportanlagen</label></div>
         <div class="checkbox"><label><input type="checkbox" id="p_universitaeten"><img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g07/homepage/img/Piktogramme/Universitaet.png"></img> Universitäten</label></div>
-        <div class="checkbox"><label><input type="checkbox" id="p_realnutzung">Realnutzungskartierung 2012</label></div>
         <h6>Vektor-Layer-Test</h6>
-        <div class="checkbox"><label><input type="checkbox" id="p_tempo30">Tempo 30-Zone</label></div>
-        <div class="checkbox"><label><input type="checkbox" id="p_zone">Fußgängerzone, Begegnungszone, Wohnstraße</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_realnutzung">Realnutzungskartierung 2012</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_zone"><canvas id="legende1" width="30" height="20">Your browser does not support the HTML5 canvas tag.</canvas> Fußgängerzone, Begegnungszone, Wohnstraße</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_tempo30"><canvas id="legende2" width="30" height="20">Your browser does not support the HTML5 canvas tag.</canvas> Tempo 30-Zone, Wohnstraßen</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_parken"><canvas id="legende3" width="30" height="20">Your browser does not support the HTML5 canvas tag.</canvas> Parkpickerl-Zone</label></div>
         <div class="checkbox"><label><input type="checkbox" id="p_voronoi">Einzugsbereiche zur nächsten hochrangigen ÖV-Stationen</label></div>
       </div>
     </div>
@@ -96,6 +97,20 @@
   </div>
   
   </div>
+            <script>
+var c = document.getElementById("legende1");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "rgba(251, 187, 16, 0.55)";
+ctx.fillRect(0, 0, 30, 20);
+var c = document.getElementById("legende2");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "rgba(251, 241, 83, 0.55)";
+ctx.fillRect(0, 0, 30, 20);
+var c = document.getElementById("legende3");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "rgba(13, 92, 247, 0.55)";
+ctx.fillRect(0, 0, 30, 20);
+</script>
   <!-- Sourcelink has to be updated when released -->
   <script type="text/javascript" src="wohnstandortanalyse.js"></script>
   </body>
