@@ -65,7 +65,7 @@ olMap.on('singleclick', function(evt) {
   var feature = new ol.Feature();
   feature.setGeometryName('geom');
   feature.setGeometry(new ol.geom.Point(evt.coordinate));
-  feature.set('comment', this.comment.value);
+  feature.set('Adresse', this.comment.value); //comment statt Adresse
   var xml = new ol.format.WFS().writeTransaction([feature], null, null, {
     featureType: 'wohnstandorte', featureNS: 'http://geoweb/2014/g07',
     gmlOptions: {srsName: 'EPSG:3857'}
