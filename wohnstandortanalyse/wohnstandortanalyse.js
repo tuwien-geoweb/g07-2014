@@ -153,7 +153,7 @@
 	// Handle map clicks to send a GetFeatureInfo request and open the popup
 	map.on('singleclick', function(evt) {
 	  var view = map.getView();
-	  var url = lay_p_wohnstandorte_query_complex.getSource().getGetFeatureInfoUrl(evt.coordinate,
+	  var url = lay_p_wohnstandorte_join_zbez_voronoi.getSource().getGetFeatureInfoUrl(evt.coordinate,
 	      view.getResolution(), view.getProjection(), {'INFO_FORMAT': 'text/html'});
 	  popup.setPosition(evt.coordinate);
 	  $('#popup-content iframe').attr('src', url);
@@ -168,13 +168,13 @@
 	
 
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
-        var lay_p_wohnstandorte_query_complex = new ol.layer.Tile({
+        var lay_p_wohnstandorte_join_zbez_voronoi = new ol.layer.Tile({
         	source: new ol.source.TileWMS({
         		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-        		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte_query_complex', TRANSPARENT: true, FORMAT: 'image/png'},
+        		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte_join_zbez', TRANSPARENT: true, FORMAT: 'image/png'},
         		})
         });
-        map.addLayer(lay_p_wohnstandorte_query_complex);
+        map.addLayer(lay_p_wohnstandorte_join_zbez_voronoi);
 		
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
