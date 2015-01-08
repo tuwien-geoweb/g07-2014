@@ -149,7 +149,7 @@
         var lay_p_wohnstandorte = new ol.layer.Tile({
         	source: new ol.source.TileWMS({
         		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-        		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte', TRANSPARENT: true, FORMAT: 'image/png'},
+        		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte_join_zbez', TRANSPARENT: true, FORMAT: 'image/png'},
         		})
         });
         map.addLayer(lay_p_wohnstandorte);
