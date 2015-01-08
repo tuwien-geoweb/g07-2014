@@ -144,6 +144,28 @@
 	 console.log(result);
 	}
 	
+     // Create an ol.Overlay with a popup anchored to the map
+	var popup = new ol.Overlay({
+	  element: $('#popup')
+	});
+	map.addOverlay(popup);
+	
+	// Handle map clicks to send a GetFeatureInfo request and open the popup
+	map.on('singleclick', function(evt) {
+	  var view = map.getView();
+	  var url = wmsLayer.getSource().getGetFeatureInfoUrl(evt.coordinate,
+	      view.getResolution(), view.getProjection(), {'INFO_FORMAT': 'text/html'});
+	  popup.setPosition(evt.coordinate);
+	  $('#popup-content iframe').attr('src', url);
+	  $('#popup')
+	    .popover({content: function() { return $('#popup-content').html(); }})
+	    .popover('show');
+	  // Close popup when user clicks on the 'x'
+	  $('.popover-title').click(function() {
+	    $('#popup').popover('hide');
+	  });
+	});
+	
 
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
         var lay_p_wohnstandorte_join_zbez = new ol.layer.Tile({
