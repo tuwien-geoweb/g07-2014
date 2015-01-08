@@ -156,7 +156,8 @@
 	  var url = lay_p_wohnstandorte_join_zbez.getSource().getGetFeatureInfoUrl(evt.coordinate,
 	      view.getResolution(), view.getProjection(), {'INFO_FORMAT': 'text/html'});
 	  popup.setPosition(evt.coordinate);
-	  $('#popup-content iframe').attr('src', url);
+	  var content_iframe = $('#popup-content iframe').attr('src', url);
+	  if(content_iframe != NULL){
 	  $('#popup')
 	    .popover({content: function() { return $('#popup-content').html(); }})
 	    .popover('show');
@@ -164,7 +165,9 @@
 	  $('.popover-title').click(function() {
 	    $('#popup').popover('hide');
 	  });
-	});
+	}
+	}
+	);
 	
 
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
