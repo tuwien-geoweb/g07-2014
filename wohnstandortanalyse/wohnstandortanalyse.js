@@ -146,13 +146,13 @@
 	
 
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
-        var lay_p_wohnstandorte = new ol.layer.Tile({
+        var lay_p_wohnstandorte_join_zbez = new ol.layer.Tile({
         	source: new ol.source.TileWMS({
         		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
         		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte_join_zbez', TRANSPARENT: true, FORMAT: 'image/png'},
         		})
         });
-        map.addLayer(lay_p_wohnstandorte);
+        map.addLayer(lay_p_wohnstandorte_join_zbez);
 		
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
