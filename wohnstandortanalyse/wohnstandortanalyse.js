@@ -153,7 +153,7 @@
 	// Handle map clicks to send a GetFeatureInfo request and open the popup
 	map.on('singleclick', function(evt) {
 	  var view = map.getView();
-	  var url = wmsLayer.getSource().getGetFeatureInfoUrl(evt.coordinate,
+	  var url = lay_p_wohnstandorte_join_zbez.getSource().getGetFeatureInfoUrl(evt.coordinate,
 	      view.getResolution(), view.getProjection(), {'INFO_FORMAT': 'text/html'});
 	  popup.setPosition(evt.coordinate);
 	  $('#popup-content iframe').attr('src', url);
