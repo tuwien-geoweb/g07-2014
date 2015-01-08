@@ -3,6 +3,7 @@ SELECT
  JOIN1.Anzahl_Gebaeude_Bauperiode_ab_2001 AS Anzahl_Gebaeude_Bauperiode_ab_2001,
  JOIN1.Anzahl_Mietwohnungen AS Anzahl_Mietwohnungen,
  JOIN1.Anzahl_Eigentumswohnungen AS Anzahl_Eigentumswohnungen,
+ JOIN1.geom AS geom,
  voronoi.HLINIEN AS Naechste_Hochrangige_OEV_Linie
 FROM(
   SELECT
