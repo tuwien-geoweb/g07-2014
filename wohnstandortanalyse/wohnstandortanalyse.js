@@ -175,7 +175,7 @@
 	  
 	//Wohnstandort löschen
         var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
-        button_delete_wohnstandort.onclick = function delete_wohnstandort(){
+        button_delete_wohnstandort.click = function delete_wohnstandort(){
      	  console.log(coordinate_of_wohnstandort);
         };  
 	  
