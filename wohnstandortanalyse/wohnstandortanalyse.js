@@ -181,6 +181,7 @@
 	  var wohnstandort_delete_feature = new ol.Feature();
 	  wohnstandort_delete_feature.setGeometryName('geom');
 	  wohnstandort_delete_feature.setGeometry(new ol.geom.Point(evt.coordinate));
+	  wohnstandort_feature.set('Adresse', 'Großbauerstraße 52');
 	  var xml = new ol.format.WFS().writeTransaction(null, null, [wohnstandort_delete_feature], {
 	  featureType: 'wohnstandorte', featureNS: 'http://geoweb/2014/g07',
 	  gmlOptions: {srsName: 'EPSG:3857'}
