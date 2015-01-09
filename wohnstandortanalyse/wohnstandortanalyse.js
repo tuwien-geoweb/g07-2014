@@ -85,10 +85,13 @@
       });
       
         // select interaction working on "click"
-        delete_feature = new ol.interaction.Select({
+        var selection = new ol.interaction.Select({
         condition: ol.events.condition.click
         });
-        map.addInteraction(delete_feature);
+        map.addInteraction(selection);
+        
+        delete_features = new ol.Feature(selection.getFeatures());
+        
       
 	var searchform = document.getElementById("search");
 	searchform.onsubmit = function(evt) {
