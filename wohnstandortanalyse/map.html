@@ -44,13 +44,20 @@
   <div class="row full">
   
   <div class="col-md-8">
+  <div id="map">
     <!--Bootstrap-container for Map element-->
     <div id="popup" data-html="true" data-placement="auto" data-title="&times;">
         <div id="popup-content" style="display:none">
+          <form class="input-group">
+            <input type="text" class="form-control" name="comment" placeholder="Standortbezeichnung">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Standort hinzufügen</button>
+            </span>
+          </form>
           <iframe seamless></iframe>
         </div>
       </div>
-    <div id="map"></div>
+    </div>
 	</br><a href="icon_quellen.html">Piktogramm-Quellen</a>
   </div>
   
@@ -64,6 +71,7 @@
     <form id="search">
       <div class="form-group">
         <div class="input-group">
+          <div class="checkbox"><label><input type="checkbox" id="toggle_editing">Wohnstandort durch Adresssuche hinzufügen</label></div>
           <input type="search" name="query" class="form-control" placeholder="Suche">
           <span class="input-group-btn">
             <button class="btn btn-default" type="submit" action="javascript:submitForm();"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
