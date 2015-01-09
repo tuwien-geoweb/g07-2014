@@ -177,7 +177,6 @@
 	var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
 	xhr.onload = function() {
-          alert(request.responseText);
 	  wmsLayer.getSource().updateParams({});
 	  alert('Wohnstandort hinzugefügt.');
 	};
