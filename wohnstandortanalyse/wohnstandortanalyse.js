@@ -218,6 +218,7 @@
 	document.getElementById('p_bezirksgrenzen').onclick = function(e){
 	  if(lay_p_bezirksgrenzenvisible=='0'){
 		map.addLayer(lay_p_bezirksgrenzen), lay_p_bezirksgrenzenvisible = 1;
+		console.log(coordinate_of_wohnstandort);
 	  }else{
 		map.removeLayer(lay_p_bezirksgrenzen), lay_p_bezirksgrenzenvisible = 0;
 	  }
