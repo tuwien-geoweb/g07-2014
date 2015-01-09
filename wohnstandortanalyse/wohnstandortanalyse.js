@@ -181,7 +181,8 @@
         var delete_wohnstandort_ausfuehren = 0;
         document.getElementById('delete_wohnstandort').onclick = function(e){
 	  if(delete_wohnstandort_ausfuehren=='0'){
-	      console.log(coordinate_of_wohnstandort), delete_wohnstandort_ausfuehren = 1;
+	      console.log(coordinate_of_wohnstandort);
+	      delete_wohnstandort_ausfuehren = 1;
 	  }else{
 	      delete_wohnstandort_ausfuehren = 0;
 	  }
