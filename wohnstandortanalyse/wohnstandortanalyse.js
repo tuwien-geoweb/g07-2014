@@ -233,10 +233,10 @@
 		     image: new ol.style.Circle({
 		       radius: 20,
 		       fill: new ol.style.Fill({
-		         color: blue
+		         color: [251, 187, 16, 1]
 		       }),
 		       stroke: new ol.style.Stroke({
-		         color: white,
+		         color: [0, 0, 0, 1],
 		         width: 2
 		       })
 		     })
