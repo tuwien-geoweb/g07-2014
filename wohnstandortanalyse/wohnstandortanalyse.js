@@ -179,7 +179,7 @@
     	   //console.log(coordinate_of_wohnstandort);
         //};
         var delete_wohnstandort_ausfuehren = 0;
-        document.getElementById('delete_wohnstandort').onclick = function(e){
+        $('.popover button')[1].onclick = function(e){
 	  if(delete_wohnstandort_ausfuehren=='0'){
 	      console.log(coordinate_of_wohnstandort);
 	      delete_wohnstandort_ausfuehren = 1;
