@@ -231,13 +231,13 @@
 		}),
 		style: new ol.style.Style({
 		     image: new ol.style.Circle({
-		       radius: width * 2,
+		       radius: 20,
 		       fill: new ol.style.Fill({
 		         color: blue
 		       }),
 		       stroke: new ol.style.Stroke({
 		         color: white,
-		         width: width / 2
+		         width: 2
 		       })
 		     })
 		})
