@@ -178,12 +178,12 @@
         //document.getElementById("delete_wohnstandort").onclick = function delete_wohnstandort(evt){
     	   //console.log(coordinate_of_wohnstandort);
         //};
-        
+        var delete_wohnstandort_ausfuehren = 0;
         document.getElementById('delete_wohnstandort').onclick = function(e){
-	  if(lay_p_bezirksgrenzenvisible=='0'){
-	      console.log(coordinate_of_wohnstandort), lay_p_bezirksgrenzenvisible = 1;
+	  if(delete_wohnstandort_ausfuehren=='0'){
+	      console.log(coordinate_of_wohnstandort), delete_wohnstandort_ausfuehren = 1;
 	  }else{
-	      lay_p_bezirksgrenzenvisible = 0;
+	      delete_wohnstandort_ausfuehren = 0;
 	  }
 	};
 	
