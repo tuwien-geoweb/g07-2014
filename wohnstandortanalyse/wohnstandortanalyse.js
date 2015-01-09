@@ -174,10 +174,18 @@
         };
 	});
 	
-	var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
-        document.getElementById("delete_wohnstandort").onclick = function delete_wohnstandort(evt){
-    	   console.log(coordinate_of_wohnstandort);
-        };
+	//var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
+        //document.getElementById("delete_wohnstandort").onclick = function delete_wohnstandort(evt){
+    	   //console.log(coordinate_of_wohnstandort);
+        //};
+        
+        document.getElementById('delete_wohnstandort').onclick = function(e){
+	  if(lay_p_bezirksgrenzenvisible=='0'){
+	      console.log(coordinate_of_wohnstandort), lay_p_bezirksgrenzenvisible = 1;
+	  }else{
+	      lay_p_bezirksgrenzenvisible = 0;
+	  }
+	};
 	
         //Wohnstandort löschen
         //$('#delete_wohnstandort').onclick(function delete_wohnstandort(e){
