@@ -97,7 +97,7 @@
 	button();
 
 	var searchform = document.getElementById("search");
-	form.onsubmit = function(evt) {
+	searchform.onsubmit = function(evt) {
 	  evt.preventDefault();
 	  var url = 'http://nominatim.openstreetmap.org/search?format=json&countrycodes=at&q=' + searchform.query.value;
 	  var xhr = new XMLHttpRequest();
