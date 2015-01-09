@@ -96,10 +96,10 @@
 	}
 	button();
 
-	var form = document.getElementById("search");
+	var searchform = document.getElementById("search");
 	form.onsubmit = function(evt) {
 	  evt.preventDefault();
-	  var url = 'http://nominatim.openstreetmap.org/search?format=json&countrycodes=at&q=' + form.query.value;
+	  var url = 'http://nominatim.openstreetmap.org/search?format=json&countrycodes=at&q=' + searchform.query.value;
 	  var xhr = new XMLHttpRequest();
 	  xhr.open("GET", url, true);
 	  xhr.onload = function() {
@@ -117,15 +117,14 @@
         //Send Coordinates of Nominatim Query to database
     	var featureType = 'wohnstandorte';
     	var featureNS = 'http://geoweb/2014/g07';
-	var form = document.forms[0];
+	//var form = document.forms[0];
 	var LocationWohnstandort = ol.proj.transform(map.getView().getCenter(), 'EPSG:3857', 'EPSG:4326')
-	console.log(result);
 	  var feature = new ol.Feature();
 	  if (LocationWohnstandort) {
 	    feature.setGeometryName('geom');
 	    feature.setGeometry(new ol.geom.Point(LocationWohnstandort));
 	  }
-	  feature.set('Adresse', form.query.value);
+	  feature.set('Adresse', searchform.query.value);
 	  
 	  var transaction = new ol.format.WFS().writeTransaction([feature], null, null, {
 	    featureType: featureType,
@@ -142,7 +141,6 @@
 	}
 	};
 	  xhr.send();
-	 console.log(result);
 	}
 	  
 	
