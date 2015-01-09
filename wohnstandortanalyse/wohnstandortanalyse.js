@@ -221,7 +221,7 @@
         		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte_query_zbez_voronoi', TRANSPARENT: true, FORMAT: 'image/png'},
         		})
         });
-        map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+        //map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
         
         
         var lay_p_wohnstandorte = new ol.layer.Vector({
@@ -229,9 +229,18 @@
 		url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:wohnstandorte&outputFormat=json',
 		projection: 'EPSG:3857'
 		}),
-		 style: new ol.style.Style({
-		  'pointRadius': 10
-                  })
+		new ol.style.Style({
+		     image: new ol.style.Circle({
+		       radius: width * 2,
+		       fill: new ol.style.Fill({
+		         color: blue
+		       }),
+		       stroke: new ol.style.Stroke({
+		         color: white,
+		         width: width / 2
+		       })
+		     })
+		})
 	      });
 	map.addLayer(lay_p_wohnstandorte);
         
