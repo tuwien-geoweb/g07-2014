@@ -84,6 +84,12 @@
         })
       });
       
+        // select interaction working on "click"
+        delete_feature = new ol.interaction.Select({
+        condition: ol.events.condition.click
+        });
+        map.addInteraction(delete_feature);
+      
 	var searchform = document.getElementById("search");
 	searchform.onsubmit = function(evt) {
 	  evt.preventDefault();
@@ -204,11 +210,7 @@
 	});
 	
 		
-        // select interaction working on "click"
-        var selectClick = new ol.interaction.Select({
-        condition: ol.events.condition.click
-        });
-        map.addInteraction(selectClick);
+
 
 
     //WFS Wohnstandortelayer zur Auswahl für die Löschabfrage
