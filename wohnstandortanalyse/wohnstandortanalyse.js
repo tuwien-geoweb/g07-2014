@@ -89,8 +89,9 @@
         condition: ol.events.condition.click
         });
         map.addInteraction(selection);
-        
-        delete_features = new ol.Feature(selection.getFeatures());
+        delete_feature = selection.getFeatures();
+      
+  
         
       
 	var searchform = document.getElementById("search");
@@ -186,13 +187,7 @@
         var delete_wohnstandort_ausfuehren = 0;
         $('.popover button')[1].onclick = function(e){
 	  if(delete_wohnstandort_ausfuehren=='0'){
-	  console.log(coordinate_of_wohnstandort);
-	  var wohnstandort_delete_feature = new ol.Feature();
-          wohnstandort_delete_feature.set('fid', 17);
-	  wohnstandort_delete_feature.set('Adresse', 'Großbauerstraße 52');
-	  wohnstandort_delete_feature.setGeometryName('geom');
-	  wohnstandort_delete_feature.setGeometry(new ol.geom.Point(evt.coordinate));
-	  var xml = new ol.format.WFS().writeTransaction(null, null, [wohnstandort_delete_feature], {
+	  var xml = new ol.format.WFS().writeTransaction(null, null, [delete_feature], {
 	  featureType: 'wohnstandorte', featureNS: 'http://geoweb/2014/g07',
 	  gmlOptions: {srsName: 'EPSG:3857'}
  	  });
@@ -200,7 +195,7 @@
           xhr.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
 	  xhr.onload = function() {
 	    lay_p_wohnstandorte_query_zbez_voronoi.getSource().updateParams({});
-	    alert('Wohnstandort gelöscht.');
+	    alert(xhr.responseText);
 	  };
 	  xhr.send(new XMLSerializer().serializeToString(xml));
           e.preventDefault();
