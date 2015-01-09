@@ -175,7 +175,7 @@
 	});
 	
         //Wohnstandort löschen
-        $('#delete_wohnstandort').click(function delete_wohnstandort(e){
+        $('#delete_wohnstandort').onclick(function delete_wohnstandort(e){
      	  console.log(coordinate_of_wohnstandort);
         });
      
