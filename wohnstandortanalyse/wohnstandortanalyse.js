@@ -202,6 +202,14 @@
 	  }
 	};
 	});
+	
+		
+        // select interaction working on "click"
+        var selectClick = new ol.interaction.Select({
+        condition: ol.events.condition.click
+        });
+        map.addInteraction(selectClick);
+
 
 
      
