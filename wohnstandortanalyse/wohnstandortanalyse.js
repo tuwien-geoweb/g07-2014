@@ -166,6 +166,28 @@
 	  });
 	});
 	
+	$('.popover form')[0].onsubmit = function(e) {
+	var wohnstandort_feature = new ol.Feature();
+	wohnstandort_feature.setGeometryName('geom');
+	wohnstandort_feature.setGeometry(new ol.geom.Point(evt.coordinate));
+	wohnstandort_feature.set('Adresse', this.comment.value); 
+	var xml = new ol.format.WFS().writeTransaction([wohnstandort_feature], null, null, {
+	  featureType: 'wohnstandorte', featureNS: 'http://geoweb/2014/g07',
+	  gmlOptions: {srsName: 'EPSG:3857'}
+	});
+	var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
+	xhr.onload = function() {
+          alert(request.responseText);
+	  wmsLayer.getSource().updateParams({});
+	  alert('Wohnstandort hinzugefügt.');
+	};
+	xhr.send(new XMLSerializer().serializeToString(xml));
+        e.preventDefault();
+        };
+	  
+	});
+	
 
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
         var lay_p_wohnstandorte_query_zbez_voronoi = new ol.layer.Tile({
