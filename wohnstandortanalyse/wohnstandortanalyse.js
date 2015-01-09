@@ -143,7 +143,7 @@
 	  var view = map.getView();
 	  var url = lay_p_wohnstandorte_query_zbez_voronoi.getSource().getGetFeatureInfoUrl(evt.coordinate,
 	      view.getResolution(), view.getProjection(), {'INFO_FORMAT': 'text/html'});
-	  var coordinate_of_wohnstandort = evt.coordinate;
+	  console.log(evt.coordinate);
 	  popup.setPosition(evt.coordinate);
 	  $('#popup-content iframe').attr('src', url);
 	  $('#popup')
