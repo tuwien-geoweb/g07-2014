@@ -229,7 +229,7 @@
 		url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:wohnstandorte&outputFormat=json',
 		projection: 'EPSG:3857'
 		}),
-		new ol.style.Style({
+		style: new ol.style.Style({
 		     image: new ol.style.Circle({
 		       radius: width * 2,
 		       fill: new ol.style.Fill({
