@@ -113,7 +113,7 @@
 		marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 	
 	
-		
+	if(document.getElementById('toggle_editing').checked == true){	
         //Send Coordinates of Nominatim Query to database
     	var featureType = 'wohnstandorte';
     	var featureNS = 'http://geoweb/2014/g07';
@@ -139,10 +139,12 @@
 	  }
 	  request.send(new XMLSerializer().serializeToString(transaction));
 	//Send Coordinates of Nominatim Query to database
-	  };
+	}
+	};
 	  xhr.send();
 	 console.log(result);
 	}
+	  
 	
      // Create an ol.Overlay with a popup anchored to the map
 	var popup = new ol.Overlay({
