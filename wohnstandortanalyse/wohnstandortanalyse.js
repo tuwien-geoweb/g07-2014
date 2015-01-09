@@ -222,7 +222,20 @@
         		})
         });
         map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-		
+        
+        
+        var lay_p_wounstandorte_vector_wfs = new ol.layer.Vector({
+		source: new ol.source.GeoJSON({
+		url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:wohnstandorte_query_zbez_voronoi&outputFormat=json',
+		projection: 'EPSG:3857'
+		}),
+		 style: new ol.style.Style({
+		  'pointRadius': 10
+                  })
+	      });
+	map.addLayer(lay_p_wounstandorte_vector_wfs);
+        
+	
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
