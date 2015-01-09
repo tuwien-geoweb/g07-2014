@@ -211,7 +211,7 @@
         });
         
         var changeInteraction = function() {
-	if (selectClick !== null) {
+	if (selectClick == null) {
 	  map.removeInteraction(select);
 	}
 	if (selectClick !== null) {
