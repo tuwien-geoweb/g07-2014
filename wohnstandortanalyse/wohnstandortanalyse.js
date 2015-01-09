@@ -172,12 +172,8 @@
 	xhr.send(new XMLSerializer().serializeToString(xml));
         e.preventDefault();
         };
-	});
-	
-	//var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
-        //document.getElementById("delete_wohnstandort").onclick = function delete_wohnstandort(evt){
-    	   //console.log(coordinate_of_wohnstandort);
-        //};
+
+        //Wohnstandort löschen        
         var delete_wohnstandort_ausfuehren = 0;
         $('.popover button')[1].onclick = function(e){
 	  if(delete_wohnstandort_ausfuehren=='0'){
@@ -187,8 +183,15 @@
 	      delete_wohnstandort_ausfuehren = 0;
 	  }
 	};
+	});
 	
-        //Wohnstandort löschen
+	//var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
+        //document.getElementById("delete_wohnstandort").onclick = function delete_wohnstandort(evt){
+    	   //console.log(coordinate_of_wohnstandort);
+        //};
+
+	
+
         //$('#delete_wohnstandort').onclick(function delete_wohnstandort(e){
      	  //console.log(coordinate_of_wohnstandort);
         //});
