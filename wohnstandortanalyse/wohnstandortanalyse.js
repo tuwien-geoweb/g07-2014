@@ -202,18 +202,23 @@
 	  }
 	};
 	});
-	
-	//var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
-        //document.getElementById("delete_wohnstandort").onclick = function delete_wohnstandort(evt){
-    	   //console.log(coordinate_of_wohnstandort);
-        //};
 
 	
-
-        //$('#delete_wohnstandort').onclick(function delete_wohnstandort(e){
-     	  //console.log(coordinate_of_wohnstandort);
-        //});
-     
+        var select = null;
+        // select interaction working on "click"
+        var selectClick = new ol.interaction.Select({
+        condition: ol.events.condition.click
+        });
+        
+        var changeInteraction = function() {
+	if (selectClick !== null) {
+	  map.removeInteraction(select);
+	}
+	if (selectClick !== null) {
+	  map.addInteraction(select);
+	}
+        };
+        changeInteraction();
      
      
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
