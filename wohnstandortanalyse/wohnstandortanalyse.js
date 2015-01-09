@@ -166,7 +166,7 @@
 	var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
 	xhr.onload = function() {
-	  wmsLayer.getSource().updateParams({});
+	  lay_p_wohnstandorte_query_zbez_voronoi.getSource().updateParams({});
 	  alert('Wohnstandort hinzugefügt.');
 	};
 	xhr.send(new XMLSerializer().serializeToString(xml));
@@ -177,8 +177,24 @@
         var delete_wohnstandort_ausfuehren = 0;
         $('.popover button')[1].onclick = function(e){
 	  if(delete_wohnstandort_ausfuehren=='0'){
-	      console.log(coordinate_of_wohnstandort);
-	      delete_wohnstandort_ausfuehren = 1;
+	  console.log(coordinate_of_wohnstandort);
+	  var wohnstandort_delete_feature = new ol.Feature();
+	  wohnstandort_delete_feature.setGeometryName('geom');
+	  wohnstandort_delete_feature.setGeometry(new ol.geom.Point(evt.coordinate));
+	  var xml = new ol.format.WFS().writeTransaction(null, null, [wohnstandort_delete_feature], {
+	  featureType: 'wohnstandorte', featureNS: 'http://geoweb/2014/g07',
+	  gmlOptions: {srsName: 'EPSG:3857'}
+ 	  });
+	  var xhr = new XMLHttpRequest();
+          xhr.open('POST', 'http://student.ifip.tuwien.ac.at/geoserver/wfs', true);
+	  xhr.onload = function() {
+	    lay_p_wohnstandorte_query_zbez_voronoi.getSource().updateParams({});
+	    alert('Wohnstandort gelöscht.');
+	  };
+	  xhr.send(new XMLSerializer().serializeToString(xml));
+          e.preventDefault();
+	      
+	  delete_wohnstandort_ausfuehren = 1;
 	  }else{
 	      delete_wohnstandort_ausfuehren = 0;
 	  }
