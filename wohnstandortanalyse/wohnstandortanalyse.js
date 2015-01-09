@@ -175,8 +175,12 @@
 	});
 	
 	//Wohnstandort löschen
-	
-
+     function delete_wohnstandort(){
+     	alert("button gedrückt");
+     }
+     
+     
+     
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
         var lay_p_wohnstandorte_query_zbez_voronoi = new ol.layer.Tile({
         	source: new ol.source.TileWMS({
