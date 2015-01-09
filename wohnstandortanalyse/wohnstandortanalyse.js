@@ -178,7 +178,7 @@
      var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
      button_delete_wohnstandort.onclick = function delete_wohnstandort(){
      	alert("button gedrückt");
-     }
+     };
      
      
      
