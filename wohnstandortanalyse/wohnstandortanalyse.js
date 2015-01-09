@@ -211,20 +211,8 @@
         map.addInteraction(selectClick);
 
 
-
-     
-     
-    //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
-        var lay_p_wohnstandorte_query_zbez_voronoi = new ol.layer.Tile({
-        	source: new ol.source.TileWMS({
-        		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-        		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte_query_zbez_voronoi', TRANSPARENT: true, FORMAT: 'image/png'},
-        		})
-        });
-        //map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-        
-        
-        var lay_p_wohnstandorte = new ol.layer.Vector({
+    //WFS Wohnstandortelayer zur Auswahl für die Löschabfrage
+            var lay_p_wohnstandorte = new ol.layer.Vector({
 		source: new ol.source.GeoJSON({
 		url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:wohnstandorte&outputFormat=json',
 		projection: 'EPSG:3857'
@@ -243,6 +231,19 @@
 		})
 	      });
 	map.addLayer(lay_p_wohnstandorte);
+     
+     
+    //WMS Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
+        var lay_p_wohnstandorte_query_zbez_voronoi = new ol.layer.Tile({
+        	source: new ol.source.TileWMS({
+        		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+        		params: {VERSION: '1.1.1', LAYERS: 'wohnstandorte_query_zbez_voronoi', TRANSPARENT: true, FORMAT: 'image/png'},
+        		})
+        });
+        map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+        
+        
+
         
 	
     // layer Bezirksgrenzen
