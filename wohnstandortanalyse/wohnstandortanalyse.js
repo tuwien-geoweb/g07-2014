@@ -84,18 +84,6 @@
         })
       });
       
-      function button() {
-//  var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
-//  geolocation.setTracking(true); // here the browser may ask for confirmation
-//  geolocation.on('change', function() {
-//    geolocation.setTracking(false);
-//    map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 19 });
-//    marker.setGeometry(new ol.geom.Point(map.getView().getCenter()));
-//    console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
-//  });
-	}
-	button();
-
 	var searchform = document.getElementById("search");
 	searchform.onsubmit = function(evt) {
 	  evt.preventDefault();
@@ -185,6 +173,8 @@
         };
 	  
 	});
+	
+	//Wohnstandort löschen
 	
 
     //Layer Wohnstandorte (Dieser Layer wird immer angezeigt)
