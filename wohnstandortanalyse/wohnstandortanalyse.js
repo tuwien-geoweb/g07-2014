@@ -164,7 +164,6 @@
 	  $('.popover-title').click(function() {
 	    $('#popup').popover('hide');
 	  });
-	});
 	
 	$('.popover form')[0].onsubmit = function(e) {
 	var wohnstandort_feature = new ol.Feature();
