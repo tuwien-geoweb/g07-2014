@@ -173,11 +173,17 @@
         e.preventDefault();
         };
 	  
-	//Wohnstandort löschen
-        var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
-        button_delete_wohnstandort.click = function delete_wohnstandort(){
+
+        //var button_delete_wohnstandort = document.getElementById("delete_wohnstandort");
+        //button_delete_wohnstandort.click = function delete_wohnstandort(){
+     	//  console.log(coordinate_of_wohnstandort);
+        //};  
+        
+        //Wohnstandort löschen
+        $('#delete_wohnstandort').click(function delete_wohnstandort(){
      	  console.log(coordinate_of_wohnstandort);
-        };  
+        });
+        
 	  
 	});
 	
