@@ -61,10 +61,10 @@
 
        var map = new ol.Map({
         target: 'map',
-        layers: [
+        layers: [/*
          new ol.layer.Tile({
             source: new ol.source.MapQuest({layer: 'osm'})
-         }),
+         }),*/
         new ol.layer.Tile({
 		    //Extent der Basemap.at
 		    extent: [977844.377599999, 5837774.6617, 1915609.8654, 6295560.8122],
