@@ -57,7 +57,6 @@
 
 //------------Basemap.at WMTS Control------------
 	
-	var marker = new ol.Feature();
 
        var map = new ol.Map({
         target: 'map',
