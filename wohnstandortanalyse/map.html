@@ -64,7 +64,7 @@
   
   <div class="col-md-4">
     <!--Bootstrap-container for control elements-->
-    <h2>Wohnstandortanalyse</h2>
+    <h2>Wohnstandortanalyse Wien</h2>
     <p>Dies ist die Wohnstandortanalyse der Gruppe 07.</p>
     
     <!--Geolocation function via Nominatim-->
@@ -84,22 +84,16 @@
   
     <!--Checkboxes as buttons / should work-->
     <button type="button" class="btn btn-default btn-block" data-toggle="button" id="p_bezirksgrenzen">Bezirksgrenzen</button>
-<p><br></p>
+      <button type="button" class="btn btn-default btn-block" name="Location" value="Location" onclick="JavaScript:geol();"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> Geolocation</button>
       
-    <!--Dropdown Menue to choose between Basemap.at and OSM-->	
-    <!--<form id="basemap">
+    <!--Dropdown Menue -->	
+    <h6>Demographie und Gebäudetypologie</h6>
+    <form id="dropdown">
       <div class="form-group">
-	<label for="form-control">Basiskarte</label>
-	<select class="form-control">
-	  <option value="geolandbasemap">basemap.at</option>
-	  <option value="osm">OpenStreetMaps (Open Layers)</option>
-	</select>
+    <select id="topics" class="form-control"></select>
       </div>
-    </form>-->
-    
-    <!--  <form id="button">
-       <input type="button" name="Location" value="Location" onclick="JavaScript:button();">
-    </form>	-->
+    </form>
+
       
     <!-- Checkboxes to choose your overlay / for Bezirksgrenzen replaced with buttons -->
     <form>

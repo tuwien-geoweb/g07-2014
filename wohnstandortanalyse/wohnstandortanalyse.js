@@ -94,7 +94,7 @@
       
   
         
-      
+    // Search  
 	var searchform = document.getElementById("search");
 	searchform.onsubmit = function(evt) {
 	  evt.preventDefault();
@@ -141,8 +141,36 @@
 	};
 	  xhr.send();
 	}
+    
+    // geolocation
+    function geol() {
+  var geolocation = new ol.Geolocation({projection: 'EPSG:3857'});
+  geolocation.setTracking(true); // here the browser may ask for confirmation
+  geolocation.on('change', function() {
+    geolocation.setTracking(false);
+    map.getView().fitGeometry(geolocation.getAccuracyGeometry(), map.getSize(), { nearest: true, maxZoom: 19 });
+    console.log("Accuracy of Geometry: " + geolocation.getAccuracy() + " meters");
+  });
+};
 	  
-	
+	// Load variables into dropdown
+$.get("datadict.txt", function(response) {
+  // We start at line 3 - line 1 is column names, line 2 is not a variable
+  $(response.split('\n').splice(2)).each(function(index, line) {
+    $('#topics').append($('<option>')
+      .val(line.substr(0, 21).trim())
+      .html(line.substr(21, 105).trim()));
+  });
+});
+
+// Add behaviour to dropdown
+// Changes the WMS parameters in Link
+$('#topics').change(function() {
+  wmsLayer.getSource().updateParams({
+    'viewparams': 'column:' + $('#topics>option:selected').val()
+  });
+});
+
      // Create an ol.Overlay with a popup anchored to the map
 	var popup = new ol.Overlay({
 	  element: $('#popup')

@@ -1,0 +1,17 @@
+Data_Item                                             Item_Description
+
+POP_TOTAL            Bevölkerung 
+OBJ_TYP_GEMEIN       Gemeindebauten
+OBJ_BAUP_BIS1918     Gebäude Baujahre bis 1918
+OBJ_BAUP_1919BIS1944 Gebäude Baujahre zwischen 1919 bis 1944
+OBJ_BAUP_1945BIS1960 Gebäude Baujahre zwischen 1945 bis 1960
+OBJ_BAUP_1961BIS1970 Gebäude Baujahre zwischen 1961 bis 1970
+OBJ_BAUP_1971BIS1980 Gebäude Baujahre zwischen 1971 bis 1980
+OBJ_BAUP_1981BIS1990 Gebäude Baujahre zwischen 1981 bis 1990
+OBJ_BAUP_1991BIS2000 Gebäude Baujahre zwischen 1991 bis 2000
+OBJ_BAUP_2001BIS     Gebäude Baujahre ab 2001
+WHG_NTZFL_BIS44      Wohnungen mit bis zu 44m² Nutzfläche
+WHG_NTZFL_45BIS59    Wohnungen mit 45m²-59m² Nutzfläche
+WHG_NTZFL_60BIS89    Wohnungen mit 60m²-89m² Nutzfläche
+WHG_NTZFL_90BIS129   Wohnungen mit 90m²-129m² Nutzfläche
+WHG_NTZFL_130BIS     Wohnungen mit über 130m² Nutzfläche
