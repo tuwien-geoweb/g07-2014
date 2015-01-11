@@ -160,7 +160,6 @@ $.get("datadict.txt", function(response) {
     $('#topics').append($('<option>')
       .val(line.substr(0, 21).trim())
       .html(line.substr(21, 105).trim()));
-      dropdown_status = $('#topics').line.substr(21, 105).trim()
   });
 });
 
@@ -280,7 +279,8 @@ $('#topics').change(function() {
         		params: {VERSION: '1.1.1', LAYERS: 'zbez_dropdown_view', TRANSPARENT: true, FORMAT: 'image/png'},
         		}),
         		opacity: 0.6
-        });        
+        });
+
 	
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
