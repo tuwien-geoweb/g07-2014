@@ -160,13 +160,14 @@ $.get("datadict.txt", function(response) {
     $('#topics').append($('<option>')
       .val(line.substr(0, 21).trim())
       .html(line.substr(21, 105).trim()));
+      dropdown_status = line.substr(21, 105).trim()
   });
 });
 
 // Add behaviour to dropdown
 // Changes the WMS parameters in Link
 $('#topics').change(function() {
-  wmsLayer.getSource().updateParams({
+  zbez_dropdown_view.getSource().updateParams({
     'viewparams': 'column:' + $('#topics>option:selected').val()
   });
 });
@@ -272,8 +273,14 @@ $('#topics').change(function() {
         map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
         
         
-
-        
+    //WMS zbez_dropdown_view
+      var zbez_dropdown_view = new ol.layer.Tile({
+        	source: new ol.source.TileWMS({
+        		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+        		params: {VERSION: '1.1.1', LAYERS: 'zbez_dropdown_view', TRANSPARENT: true, FORMAT: 'image/png'},
+        		}),
+        		opacity: 0.6
+        });        
 	
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
