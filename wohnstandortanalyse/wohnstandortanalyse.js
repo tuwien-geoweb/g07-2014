@@ -278,7 +278,7 @@ $('#topics').change(function() {
         		url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
         		params: {VERSION: '1.1.1', LAYERS: 'zbez_dropdown_view', TRANSPARENT: true, FORMAT: 'image/png'},
         		}),
-        		//opacity: 0.6
+        		opacity: 0.5
         });
         
        $('#topics').change(function() {
