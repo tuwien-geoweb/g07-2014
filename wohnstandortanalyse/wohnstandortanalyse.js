@@ -294,8 +294,6 @@ $('#topics').change(function() {
        	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
        	//insert Legend in map div
         $('#map').prepend('<img class="legend img-rounded" src="http://student.ifip.tuwien.ac.at/geoserver/g07_2014/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=g07_zbez_dropdown_view" />');
-  });
-
        }
        });
        
