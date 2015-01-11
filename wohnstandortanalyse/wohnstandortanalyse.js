@@ -160,7 +160,7 @@ $.get("datadict.txt", function(response) {
     $('#topics').append($('<option>')
       .val(line.substr(0, 21).trim())
       .html(line.substr(21, 105).trim()));
-      dropdown_status = line.substr(21, 105).trim()
+      dropdown_status = $('#topics').line.substr(21, 105).trim()
   });
 });
 
