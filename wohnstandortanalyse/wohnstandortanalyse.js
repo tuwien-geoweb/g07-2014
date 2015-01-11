@@ -281,7 +281,7 @@ $('#topics').change(function() {
         		//opacity: 0.6
         });
         
-       $('#topics').change(function show_zbezlayer() {
+       $('#topics').change(function() {
        var selected_index = document.getElementById('topics').selectedIndex;
        console.log(selected_index);
        if(selected_index == -1){
@@ -290,7 +290,6 @@ $('#topics').change(function() {
        	map.addLayer(zbez_dropdown_view);
        }
        }
-       show_zbezlayer();
        
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
