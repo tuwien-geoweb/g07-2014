@@ -91,7 +91,6 @@
         });
         map.addInteraction(selection);
         delete_feature = selection.getFeatures();
-      
   
         
     // Search  
@@ -383,50 +382,36 @@ $('#topics').change(function() {
 				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_universitaeten', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
-			  
-var lay_p_realnutzung = new ol.layer.Tile({
+
+
+    var lay_p_realnutzung = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
 				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
 				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_realnutzungskartierung2012', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
 
-	var lay_p_tempo30 = new ol.layer.Vector({
-				source: new ol.source.GeoJSON({
-				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_tempo30zonen,g07_2014_p_wohnstrassen&outputFormat=json',
-				projection: 'EPSG:3857'
-				}),
-                                style: new ol.style.Style({
-				        fill: new ol.style.Fill({
-				                color: [251, 241, 83, 0.55]
-				        })
-                                     })
-			        });
-
-	var lay_p_zone = new ol.layer.Vector({
-				source: new ol.source.GeoJSON({
-				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_fussgaengerzonen&outputFormat=json',
-				projection: 'EPSG:3857'
-				}),
-				style: new ol.style.Style({
-					fill: new ol.style.Fill({
-						color: [251, 187, 16, 0.55]
-					})
+	var lay_p_tempo30 = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_tempo30zonen,g07_2014_p_wohnstrassen', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
 
-      	var lay_p_voronoi = new ol.layer.Vector({
-        			source: new ol.source.GeoJSON({
-                  		url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_HighRankStopsVoronoi_bez&outputFormat=json',
-                		projection: 'EPSG:3857'
-        			}),
-				style: new ol.style.Style({
-				      stroke: new ol.style.Stroke({
-				        color: 'black',
-				        width: 1
-				      })
-				    })
-				});
+	var lay_p_zone = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_fussgaengerzonen', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
+	var lay_p_voronoi = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_HighRankStopsVoronoi_bez', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });	
+
 
 	var lay_p_parken = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
