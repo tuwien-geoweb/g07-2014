@@ -68,16 +68,18 @@
     <p>Dies ist die Wohnstandortanalyse der Gruppe 07.</p>
     
     <!--Geolocation function via Nominatim-->
-    <p>Geben Sie Ihre Adresse in die Suchleiste ein, um ihren Wohnstandort auf der Karte hinzuzufügen:</p>
+    <!--<p>Geben Sie Ihre Adresse in die Suchleiste ein, um ihren Wohnstandort auf der Karte hinzuzufügen:</p>-->
     <form id="search">
       <div class="form-group">
-        <div class="checkbox"><label><input type="checkbox" id="toggle_editing">Wohnstandort durch Adresssuche hinzufügen</label></div>
         <div class="input-group">
           <input type="search" name="query" class="form-control" placeholder="Suche">
           <span class="input-group-btn">
             <button class="btn btn-default" type="submit" action="javascript:submitForm();"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
           </span>
 	</div>
+                  <div class="checkbox"><label><input type="checkbox" id="toggle_editing">Wohnstandort durch Adresssuche hinzufügen</label></div>
+          <div class="checkbox"><label><input type="checkbox" id="toggle_wohnstandorte" checked>gespeicherte Wohnstandorte anzeigen</label></div>
+
       </div>
     </form>
     
@@ -107,12 +109,18 @@
         <div class="checkbox"><label><input type="checkbox" id="p_spielplaetze"><img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g07/homepage/img/Piktogramme/Spielplatz.png"></img> Spielplätze</label></div>
         <div class="checkbox"><label><input type="checkbox" id="p_sportstaetten"><img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g07/homepage/img/Piktogramme/Sportanlage.png"></img> Sportanlagen</label></div>
         <div class="checkbox"><label><input type="checkbox" id="p_universitaeten"><img src="http://student.ifip.tuwien.ac.at/geoweb/2014/g07/homepage/img/Piktogramme/Universitaet.png"></img> Universitäten</label></div>
-        <h6>Vektor-Layer</h6>
-        <div class="checkbox"><label><input type="checkbox" id="p_realnutzung">Realnutzungskartierung 2012</label></div>
-        <div class="checkbox"><label><input type="checkbox" id="p_zone"><canvas id="legende1" width="30" height="20">Your browser does not support the HTML5 canvas tag.</canvas> Fußgängerzone, Begegnungszone, Wohnstraße</label></div>
-        <div class="checkbox"><label><input type="checkbox" id="p_tempo30"><canvas id="legende2" width="30" height="20">Your browser does not support the HTML5 canvas tag.</canvas> Tempo 30-Zone, Wohnstraßen</label></div>
-        <div class="checkbox"><label><input type="checkbox" id="p_parken"><canvas id="legende3" width="30" height="20">Your browser does not support the HTML5 canvas tag.</canvas> Parkpickerl-Zone</label></div>
-        <div class="checkbox"><label><input type="checkbox" id="p_voronoi">Einzugsbereiche zur nächsten hochrangigen ÖV-Stationen</label></div>
+        <h6>Verkehr und Flächennutzug</h6>
+        <div class="checkbox"><label><input type="checkbox" id="p_voronoi">Einzugsbereiche zur nächsten hochrangigen ÖV-Station</label> <a data-toggle="collapse" href="#ervoronoi" aria-expanded="false" aria-controls="false"><small><strong>Erläuterung</strong></small>
+</a></div>
+    <div class="collapse" id="ervoronoi">
+  <div background-color="#FFFFFF"><small><em>In diesem Kartenlayer wird der Einzugsbereich der jeweils nächsten hochrangigen ÖV-Station (U-Bahn, S-Bahn und Wiener Lokalbahn) dargestellt.</em></small></div></div>
+<div class="checkbox"><label><input type="checkbox" id="p_realnutzung">Realnutzungskartierung 2012</label> <a data-toggle="collapse" href="#legendereal" aria-expanded="false" aria-controls="false"><small><strong>Legende</strong></small>
+</a>
+    <div class="collapse" id="legendereal">
+  <div background-color="#FFFFFF"><img src="http://student.ifip.tuwien.ac.at/geoserver/g07_2014/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=g07_2014_p_realnutzungskartierung2012&legend_options=fontAntiAliasing:true"></img></div></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_zone"><canvas id="legende1" width="30" height="17">Your browser does not support the HTML5 canvas tag.</canvas> Fußgängerzone, Begegnungszone</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_tempo30"><canvas id="legende2" width="30" height="17">Your browser does not support the HTML5 canvas tag.</canvas> Tempo 30-Zone, Wohnstraßen</label></div>
+        <div class="checkbox"><label><input type="checkbox" id="p_parken"><canvas id="legende3" width="30" height="17">Your browser does not support the HTML5 canvas tag.</canvas> Parkpickerl-Zone</label></div>
       </div>
     </div>
     </form>

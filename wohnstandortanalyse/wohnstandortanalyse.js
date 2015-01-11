@@ -98,7 +98,7 @@
 	var searchform = document.getElementById("search");
 	searchform.onsubmit = function(evt) {
 	  evt.preventDefault();
-	  var url = 'http://nominatim.openstreetmap.org/search?format=json&countrycodes=at&q=' + searchform.query.value;
+	  var url = 'http://nominatim.openstreetmap.org/search?format=json&countrycodes=at&q=' + searchform.query.value +'%20Wien';
 	  var xhr = new XMLHttpRequest();
 	  xhr.open("GET", url, true);
 	  xhr.onload = function() {
@@ -282,9 +282,11 @@ $('#topics').change(function() {
 				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_bezirksgrenzen', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
-			  
+
 
    var lay_p_bezirksgrenzenvisible = 0;
+
+   var lay_p_wohnstandortevisible = 1;
 
     // add layer Bezirksgrenzen triggered by Button
 	document.getElementById('p_bezirksgrenzen').onclick = function(e){
@@ -293,6 +295,15 @@ $('#topics').change(function() {
 		console.log(coordinate_of_wohnstandort);
 	  }else{
 		map.removeLayer(lay_p_bezirksgrenzen), lay_p_bezirksgrenzenvisible = 0;
+	  }
+	};
+
+	document.getElementById('toggle_wohnstandorte').onclick = function(e){
+	  if(lay_p_wohnstandortevisible=='0'){
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi), lay_p_wohnstandortevisible = 1;
+		console.log(coordinate_of_wohnstandort);
+	  }else{
+		map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi), lay_p_wohnstandortevisible = 0;
 	  }
 	};
 
@@ -353,14 +364,12 @@ $('#topics').change(function() {
 				})
 			  });
 			  
-	var lay_p_realnutzung = new ol.layer.Tile({
+var lay_p_realnutzung = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
 				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
 				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_realnutzungskartierung2012', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
-
-// layer vectors dont work...
 
 	var lay_p_tempo30 = new ol.layer.Vector({
 				source: new ol.source.GeoJSON({
@@ -399,18 +408,14 @@ $('#topics').change(function() {
 				    })
 				});
 
-	var lay_p_parken = new ol.layer.Vector({
-				source: new ol.source.GeoJSON({
-				url: 'http://student.ifip.tuwien.ac.at/geoserver/g07_2014/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g07_2014:g07_2014_p_parkpickerlgeltungsbereich&outputFormat=json',
-				projection: 'EPSG:3857'
-				}),
-                                style: new ol.style.Style({
-				        fill: new ol.style.Fill({
-				                color: [13, 92, 247, 1]
-				        })
-                                     }),
-        opacity: 0.55
-			        });
+	var lay_p_parken = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_parkpickerlgeltungsbereich', TRANSPARENT: true, FORMAT: 'image/png'}
+				})
+			  });
+
+    
 
 /*// code snippet from last years groups, dont work either, even breaks WMS layers
 var lay_p_zone = new ol.layer.Vector({
