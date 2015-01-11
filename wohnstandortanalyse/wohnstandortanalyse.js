@@ -280,9 +280,8 @@ $('#topics').change(function() {
         		}),
         		opacity: 0.6
         });
-        
-       var topic = document.getElementById("topics");
-       var selected_topic = topic.options[topic.selectedIndex].text;
+       var selected_topic = document.getElementById('topics').options[topic.selectedIndex].text;
+       console.log(selected_topic);
        if(selected_topic == '----Kein Layer----'){
        	map.removeLayer(zbez_dropdown_view);
        } else {
