@@ -57,7 +57,6 @@
 
 //------------Basemap.at WMTS Control------------
 	
-
        var map = new ol.Map({
         target: 'map',
         layers: [/*
@@ -238,9 +237,6 @@ $('#topics').change(function() {
 	});
 	
 		
-
-
-
     //WFS Wohnstandortelayer zur Auswahl für die Löschabfrage
             var lay_p_wohnstandorte = new ol.layer.Vector({
 		source: new ol.source.GeoJSON({
@@ -287,7 +283,6 @@ $('#topics').change(function() {
        console.log(selected_index);
        if(selected_index == -1 || selected_index == 0){
        	map.removeLayer(zbez_dropdown_view);
-       	$('#legend').remove()
        } else {
        	map.removeLayer(zbez_dropdown_view);
        	map.addLayer(zbez_dropdown_view);
@@ -441,22 +436,6 @@ var lay_p_realnutzung = new ol.layer.Tile({
 			  });
 
     
-
-/*// code snippet from last years groups, dont work either, even breaks WMS layers
-var lay_p_zone = new ol.layer.Vector({
-  source: new ol.source.Vector({
-    url: 'http://student.ifip.tuwien.ac.at/geoserver/g03_2013/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=g03_2013:HALTESTELLEWLOGD&outputFormat=json',
-    parser: new ol.parser.GeoJSON()
-  }),
-            style: new ol.style.Style({
-                     symbolizers: [
-               new ol.style.Icon({
-			url: 'http://student.ifip.tuwien.ac.at/geoweb/2013/g03/images/Haltestellen.png',
-		       })
-                  ]
-            })
-  });*/
-
     // Layers triggered by checkboxes
 	document.getElementById('p_carsharing').onclick = function(e){
 	  if(this.checked==1){
