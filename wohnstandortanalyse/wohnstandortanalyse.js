@@ -287,6 +287,7 @@ $('#topics').change(function() {
        if(selected_index == -1){
        	map.removeLayer(zbez_dropdown_view);
        } else {
+       	map.removeLayer(zbez_dropdown_view);
        	map.addLayer(zbez_dropdown_view);
        }
        });
