@@ -85,6 +85,13 @@
         })
       });
       
+      //Function to reorder Layer order
+      function reorder_layers() {
+       layer_array = map.getLayers(); 	
+      	
+      }
+      
+      
         // select interaction working on "click"
         var selection = new ol.interaction.Select({
         condition: ol.events.condition.click
@@ -289,7 +296,6 @@ $('#topics').change(function() {
        } else {
        	map.removeLayer(zbez_dropdown_view);
        	map.addLayer(zbez_dropdown_view);
-       	map.getLayers().insertAt(lay_p_wohnstandorte_query_zbez_voronoi, 1);
        }
        });
        
