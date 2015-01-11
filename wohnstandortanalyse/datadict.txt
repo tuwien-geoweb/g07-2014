@@ -1,6 +1,6 @@
 Data_Item                                             Item_Description
 
-POP_TOTAL            ----Kein LAYER----
+POP_TOTAL            ----Kein Layer----
 POP_TOTAL            Bevölkerung 
 OBJ_TYP_GEMEIN       Gemeindebauten
 OBJ_BAUP_BIS1918     Gebäude Baujahre bis 1918
