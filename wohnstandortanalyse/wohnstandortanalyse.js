@@ -284,7 +284,7 @@ $('#topics').change(function() {
 
        var selected_index = document.getElementById('topics').selectedIndex;
        console.log(selected_index);
-       if(selected_index == 0){
+       if(selected_index == -1){
        	map.removeLayer(zbez_dropdown_view);
        } else {
        	map.addLayer(zbez_dropdown_view);
