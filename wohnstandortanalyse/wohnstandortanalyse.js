@@ -280,7 +280,14 @@ $('#topics').change(function() {
         		}),
         		opacity: 0.6
         });
-
+        
+       var topic = document.getElementById("topics");
+       var selected_topic = topic.options[topic.selectedIndex].text;
+       if(selected_topic == '----Kein Layer----'){
+       	map.removeLayer(zbez_dropdown_view);
+       } else {
+       	map.addLayer(zbez_dropdown_view);
+       }
 	
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
