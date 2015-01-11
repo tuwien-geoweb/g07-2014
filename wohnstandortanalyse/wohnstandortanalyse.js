@@ -367,7 +367,7 @@ $('#topics').change(function() {
 var lay_p_realnutzung = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
 				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_realnutzung_2009', TRANSPARENT: true, FORMAT: 'image/png'},
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_realnutzungskartierung2012', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
 
