@@ -289,7 +289,7 @@ $('#topics').change(function() {
        } else {
        	map.addLayer(zbez_dropdown_view);
        }
-       }
+       };
        
     // layer Bezirksgrenzen
 	var lay_p_bezirksgrenzen = new ol.layer.Tile({
