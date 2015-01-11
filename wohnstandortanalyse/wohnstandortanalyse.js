@@ -289,6 +289,7 @@ $('#topics').change(function() {
        } else {
        	map.removeLayer(zbez_dropdown_view);
        	map.addLayer(zbez_dropdown_view);
+       	map.getLayers().insertAt(lay_p_wohnstandorte_query_zbez_voronoi, 1);
        }
        });
        
