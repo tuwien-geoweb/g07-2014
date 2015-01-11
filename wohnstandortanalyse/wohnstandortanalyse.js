@@ -85,12 +85,6 @@
         })
       });
       
-      //Function to reorder Layer order
-      function reorder_layers() {
-       layer_array = map.getLayers(); 	
-      	
-      }
-      
       
         // select interaction working on "click"
         var selection = new ol.interaction.Select({
@@ -296,6 +290,8 @@ $('#topics').change(function() {
        } else {
        	map.removeLayer(zbez_dropdown_view);
        	map.addLayer(zbez_dropdown_view);
+       	map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+       	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
        }
        });
        
