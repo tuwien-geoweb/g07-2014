@@ -57,6 +57,7 @@
 
 //------------Basemap.at WMTS Control------------
 	
+	
        var map = new ol.Map({
         target: 'map',
         layers: [/*
@@ -92,6 +93,9 @@
         map.addInteraction(selection);
         delete_feature = selection.getFeatures();
   
+        
+        //Nominatim Marker
+        var marker = new ol.Feature();
         
     // Search  
 	var searchform = document.getElementById("search");
