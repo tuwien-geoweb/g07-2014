@@ -341,6 +341,13 @@ $('#topics').change(function() {
 				})
 			  });
 
+	var lay_p_citybike = new ol.layer.Tile({
+				source: new ol.source.TileWMS({
+				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_citybike', TRANSPARENT: true, FORMAT: 'image/png'},
+				})
+			  });
+
 	var lay_p_haltestellen = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
 				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
@@ -401,7 +408,7 @@ $('#topics').change(function() {
 	var lay_p_zone = new ol.layer.Tile({
 				source: new ol.source.TileWMS({
 				  url: 'http://student.ifip.tuwien.ac.at/geoserver/wms',
-				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_fussgaengerzonen', TRANSPARENT: true, FORMAT: 'image/png'},
+				  params: {VERSION: '1.1.1', LAYERS: 'g07_2014:g07_2014_p_fussgaengerzonen,g07_2014_p_begegnungszone', TRANSPARENT: true, FORMAT: 'image/png'},
 				})
 			  });
 
@@ -439,6 +446,16 @@ $('#topics').change(function() {
        	        map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
 	  }else{
 		map.removeLayer(lay_p_fahrrad);
+    	  }
+    	};
+
+	document.getElementById('p_citybike').onclick = function(e){
+	  if(this.checked==1){
+		map.addLayer(lay_p_citybike);
+		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+       	        map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+		map.removeLayer(lay_p_citybike);
     	  }
     	};
 
