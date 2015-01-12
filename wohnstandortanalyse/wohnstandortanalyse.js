@@ -432,8 +432,11 @@ $('#topics').change(function() {
 	document.getElementById('p_carsharing').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_carsharing);
-         	map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-         	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_carsharing);
     	  }
@@ -442,8 +445,11 @@ $('#topics').change(function() {
 	document.getElementById('p_fahrrad').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_fahrrad);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-       	        map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_fahrrad);
     	  }
@@ -452,8 +458,11 @@ $('#topics').change(function() {
 	document.getElementById('p_citybike').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_citybike);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-       	        map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_citybike);
     	  }
@@ -462,8 +471,11 @@ $('#topics').change(function() {
 	document.getElementById('p_haltestellen').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_haltestellen);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_haltestellen);
     	  }
@@ -472,8 +484,11 @@ $('#topics').change(function() {
 	document.getElementById('p_parkanlagen').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_parkanlagen);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_parkanlagen);
     	  }
@@ -482,8 +497,11 @@ $('#topics').change(function() {
 	document.getElementById('p_schulen').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_schulen);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_schulen);
     	  }
@@ -492,8 +510,11 @@ $('#topics').change(function() {
 	document.getElementById('p_spielplaetze').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_spielplaetze);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_spielplaetze);
     	  }
@@ -502,8 +523,11 @@ $('#topics').change(function() {
 	document.getElementById('p_sportstaetten').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_sportstaetten);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_sportstaetten);
     	  }
@@ -512,8 +536,11 @@ $('#topics').change(function() {
 	document.getElementById('p_universitaeten').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_universitaeten);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_universitaeten);
     	  }
@@ -522,8 +549,11 @@ $('#topics').change(function() {
     	document.getElementById('p_realnutzung').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_realnutzung);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_realnutzung);
     	  }
@@ -532,8 +562,11 @@ $('#topics').change(function() {
 	document.getElementById('p_tempo30').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_tempo30);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_tempo30);
     	  }
@@ -542,8 +575,11 @@ $('#topics').change(function() {
 	document.getElementById('p_zone').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_zone);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_zone);
     	  }
@@ -552,8 +588,11 @@ $('#topics').change(function() {
 	document.getElementById('p_voronoi').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_voronoi);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);		
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };	
 	  }else{
 		map.removeLayer(lay_p_voronoi);
     	  }
@@ -562,8 +601,11 @@ $('#topics').change(function() {
 	document.getElementById('p_parken').onclick = function(e){
 	  if(this.checked==1){
 		map.addLayer(lay_p_parken);
-		map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
-          	map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+          if(lay_p_wohnstandortevisible=='1'){
+        map.removeLayer(lay_p_wohnstandorte), map.removeLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+		map.addLayer(lay_p_wohnstandorte), map.addLayer(lay_p_wohnstandorte_query_zbez_voronoi);
+	  }else{
+	  };
 	  }else{
 		map.removeLayer(lay_p_parken);
     	  }
